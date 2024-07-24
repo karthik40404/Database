@@ -10,7 +10,7 @@ import sqlite3
 # con.commit()# to save
 
 
-con=sqlite3.connect('python_programs/database/demo.db') #connection
+con=sqlite3.connect('Database/demo.db') #connection
 
 try:
     con.execute("create table student(age int,name text,mark real)") #create table
