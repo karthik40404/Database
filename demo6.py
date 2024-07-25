@@ -1,6 +1,6 @@
 import sqlite3
 
-con=sqlite3.connect('Database/demo5.db') #connection
+con=sqlite3.connect('Database/demo6.db') #connection
 
 try:
     con.execute("create table student(age int,name text,mark real)") #create table
@@ -15,9 +15,7 @@ except:
 #     con.execute('insert into student (age,name,mark) values(?,?,?)',(age,name,mark))
 # con.commit()
 
-data=con.execute('select*from student where name like"a%"')#like
+data=con.execute('select name,count(mark) from student group by name')#groupby
 
-print("{:<10}{:<10}{:<10}".format("age","name","mark"))
-print('_'*25)
 for i in data:
-    print("{:<10}{:<10}{:<10}".format(i[0],i[1],i[2]))
+    print(i)
