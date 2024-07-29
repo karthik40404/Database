@@ -1,16 +1,16 @@
 import mysql.connector
 
-# Connect to MySQL database
+
 con = mysql.connector.connect(
-    host="localhost",      # or "127.0.0.1"
-    user="karthik_kv",     # your MySQL username
-    password="Karthik.404", # your MySQL password
-    database="mydatabase"   # your MySQL database name
+    host="localhost",      
+    user="karthik_kv",     
+    password="Karthik.404", 
+    database="mydatabase"   
 )
 
 cursor = con.cursor()
 
-# Create the table if it does not exist
+
 cursor.execute("CREATE TABLE IF NOT EXISTS staff (emp_id INT, name VARCHAR(255), age INT, salary FLOAT, phno VARCHAR(20))")
 
 print('\nstaff details')
@@ -23,7 +23,7 @@ while True:
         name = input('Enter name: ')
         age = int(input('Enter age: '))
         salary = float(input('Enter salary: '))
-        phno = input('Enter phone number: ')  # Phone number can be stored as a string for flexibility
+        phno = input('Enter phone number: ')  
         cursor.execute('INSERT INTO staff (emp_id, name, age, salary, phno) VALUES (%s, %s, %s, %s, %s)', (emp_id, name, age, salary, phno))
         con.commit()
 
@@ -68,6 +68,4 @@ while True:
     else:
         print('Invalid choice')
 
-# Close the connection
-# cursor.close()
-# con.close()
+
