@@ -1,6 +1,6 @@
 import sqlite3
 
-con=sqlite3.connect('Database/demo5.db') #connection
+con=sqlite3.connect('Database/demo4.db') #connection
 
 try:
     con.execute("create table student(age int,name text,mark real)") #create table

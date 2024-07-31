@@ -91,7 +91,8 @@ while True:
                 print("{:<10}{:<20}{:<10}{:<10}{:<15}".format(i[0], i[1], i[2], i[3], i[4]))
 
 
-    
+    elif choice == 9:
+        cursor.execute('select staff.name,staff.age,staff.salary from staff where ')
     
 
 
